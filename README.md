@@ -1,4 +1,4 @@
 
-# Simple pixel manupulation library for Javascript
+# Simple pixel manupulation system for Javascript
 
 Usage: import using script tag
