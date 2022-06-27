@@ -23,7 +23,7 @@ function loop(){
   for(let t = 0; t<=360; t+=5){
     px.drawPixel(Math.round(r*Math.cos(rad(t))), Math.round(r*Math.sin(rad(t))));
   }
-  px.draw();
+  px.render();
 }
 
 

@@ -30,7 +30,7 @@ class Pixatron {
             return x == x1 && y == y1;
         }));
     }
-    draw(){
+    render(){
         for(let i = 0; i<=Math.ceil(this.gridSize.y); i++){
             for(let j = 0; j<=Math.ceil(this.gridSize.x); j++){
                 let drwn = false;
