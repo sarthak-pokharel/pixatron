@@ -11,18 +11,30 @@ canv.width = H*0.9;
 canv.height = H*0.9;
 
 let px = new Pixatron({context: ctx, canvas: canv, 
-  gridSize:{x:25, y:25}});
+  gridSize:{x:50, y:50}});
 
 
 let rad = (deg)=>deg*Math.PI/180;
 let r = 0;
+
+
+let squareCoords = 
+[ [1,   1],
+  [1,  -1],
+  [-1, -1],
+  [-1,  1] ];
+
+
+
 function loop(){
   r+=1;
   r = r%15;
   px.clear();
-  for(let t = 0; t<=360; t+=5){
-    px.drawPixel(Math.round(r*Math.cos(rad(t))), Math.round(r*Math.sin(rad(t))));
-  }
+  px.setFillColor('#fff');
+  px.drawPixel(0,0);
+  px.setFillColor("#f00");
+  px.drawLine([0,0], [2,2])
+  // px.connectDots(...squareCoords);
   px.render();
 }
 
@@ -30,6 +42,6 @@ function loop(){
 function animate(){
   if(paused) return;
   loop();
-  setTimeout(animate, 100);
+  // setTimeout(animate, 100);
 }
 animate();
